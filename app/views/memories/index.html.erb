@@ -1,0 +1,13 @@
+<h1>Memories</h1>
+<div class="main-container">
+  <div class="cards">
+    <% @memories.each do |memory| %>
+      <div class="card">
+          <%= link_to memory.name, memory_path(memory)%>
+      </div>        
+    <% end %>
+  </div>
+</div>
+<h4> <%= link_to "Back to home", root_path %> </h4>
+
+
