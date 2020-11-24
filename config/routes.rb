@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   end
 
 
-  get '/dashboard', to: "dashboards#show" #separate route for dashboard view
+  get '/dashboard', to: "dashboards#index" #separate route for dashboard view
 
 end
