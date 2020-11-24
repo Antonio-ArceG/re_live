@@ -1,0 +1,16 @@
+<div class="container">
+<h1> Create a new memory </h1>
+
+<%= simple_form_for([@user, @memory]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :duration %>
+  <%= f.input :location %>
+  <%= f.input :category %>
+  <%= f.submit %>
+  <% end %>
+
+<%= link_to "Back to home", memories_path %>
+
+</div>
