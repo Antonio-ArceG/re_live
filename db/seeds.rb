@@ -26,7 +26,7 @@ puts "Creating 20 fake users..."
       name: Faker::Games::Pokemon.unique.name,
       description: Faker::Quote.famous_last_words,
       price: Faker::Number.number(digits: 3),
-      duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+      duration: "#{rand(2..10)} #{%w(hours days weeks).sample}",
       location: Faker::Nation.capital_city,
       category: Faker::Team.sport
     )
