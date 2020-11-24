@@ -21,7 +21,7 @@ puts "Creating 20 fake users..."
   )
 
   5.times do
-    Memory.create!(
+    memory = Memory.create!(
       creator: user,
       name: Faker::Games::Pokemon.unique.name,
       description: Faker::Quote.famous_last_words,
@@ -29,6 +29,16 @@ puts "Creating 20 fake users..."
       duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
       location: Faker::Nation.capital_city,
       category: Faker::Team.sport
+    )
+    start_date = Date.today + rand(-10..10)
+    Booking.create!(
+      location: memory.location,
+      status: false,
+      start_date: start_date,
+      end_date: start_date + rand(0..5),
+      price: memory.price,
+      customer: User.all.sample,
+      memory: memory,
     )
   end
 end
