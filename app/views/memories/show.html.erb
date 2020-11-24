@@ -1,12 +1,14 @@
-<h1> Memory: <%= @memory.name  %></h1>
+<div class="container">
+    <h1> Memory: <%= @memory.name  %></h1>
 
-<ul>
-    <li>Description: <%= @memory.description %></li>
-    <li>Price: $<%= @memory.price %></li>
-    <li>Duration: <%= @memory.duration %> minutes</li>
-    <li>Location: <%= @memory.location %></li>
-    <li>Created by:<%= @memory.creator_id %></li>
-</ul>
+    <ul>
+        <li>Description: <%= @memory.description %></li>
+        <li>Price: $<%= @memory.price %></li>
+        <li>Duration: <%= @memory.duration %> minutes</li>
+        <li>Location: <%= @memory.location %></li>
+        <li>Created by:<%= @memory.creator.username %></li>
+    </ul>
 
-<%= link_to "back to memories", memories_path %>
-<%= link_to "back to home", root_path %>
+    <%= link_to "back to memories", memories_path %>
+    <%= link_to "back to home", root_path %>
+</div>
