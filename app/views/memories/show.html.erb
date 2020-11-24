@@ -1,0 +1,25 @@
+<h1> Ingredients for a <%= @memory.name  %></h1>
+
+<ul>
+  <% @memory.each do |memory| %>
+    <li><%= memory.name %>
+        <%= memory.description %>
+        <%= memory.description %>
+    </li>
+  <% end %>
+
+  <%= link_to "Add new dose", new_memory_dose_path(@memory.id) %>
+  <%= link_to "Memories list", memories_path %>
+
+</ul>
+
+# t.string "name"
+# t.string "description"
+# t.integer "price"
+# t.string "duration"
+# t.string "location"
+# t.string "category"
+# t.bigint "creator_id", null: false
+# t.datetime "created_at", precision: 6, null: false
+# t.datetime "updated_at", precision: 6, null: false
+# t.index ["creator_id"], name: "index_memories_on_creator_id"
