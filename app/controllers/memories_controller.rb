@@ -1,5 +1,11 @@
 class MemoriesController < ApplicationController
+  def index
+    @memories = Memory.all
+  end
 
+  def show
+    @memory = Memory.find(params[:id])
+  end
 
   def new
     @memory = Memory.new
@@ -14,6 +20,7 @@ class MemoriesController < ApplicationController
       render :new
     end
   end
+
   private
 
   def memory_params
