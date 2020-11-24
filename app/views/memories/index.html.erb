@@ -1,0 +1,23 @@
+<h1>Memories</h1>
+<div class="main-container">
+  <div class="cards">
+    <% @memories.each do |memory| %>
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to memory.name, memory_path(memory)%></h2>
+            <p><%= memory.description%></p>
+          </div>
+          <h2 class="card-trip-pricing">$<%= memory.price%></h2>
+          <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<h4> <%= link_to "Back to home", root_path %> </h4>
+
+
+
+
