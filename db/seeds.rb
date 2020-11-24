@@ -1,6 +1,6 @@
 User.create!(
-  username: user,
-  email: "test@email.com",
+  username: "JonnyD",
+  email: "jonnydanger@relive.com",
   first_name: "Jonny",
   last_name: "Danger",
   phone_number: Faker::PhoneNumber.cell_phone,
