@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
 
   get '/dashboard', to: "dashboards#index" #separate route for dashboard view
-
+  get '/my_memories' => "dashboards#my_memories", as: "my_memories"
 end

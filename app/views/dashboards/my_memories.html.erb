@@ -4,7 +4,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Bookings</h1>
+        <h1 class="h2">My Memories</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -16,19 +16,22 @@
           </button>
         </div>
       </div>
+     
+      
 
-      <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
-
-      <% @my_bookings.each do |booking| %>
+<% @my_memories.each do |memory| %>
       <div class="card-trip">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-trip-infos">
           <div>
-            <p><%= booking.memory%></p>
-            <p><%= booking.price%></p>
-            <p><%= booking.status%></p>
-            <p><%= booking.start_date%></p>
-            <p><%= booking.end_date%></p>
-            
+            <h2><%= link_to memory.name, memory_path(memory)%></h2>
+            <p><%= memory.description%></p>
           </div>
+          <h2 class="card-trip-pricing">$<%= memory.price%></h2>
+          <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     <% end %>
+    
+    <%= link_to "Create a new memory",new_memory_path %>
+    <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
