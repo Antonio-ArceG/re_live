@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :memories, only: [:index, :show, :new, :create, :top] do #memories route
     resources :bookings, only: [:new] #appending new action to memories
     resources :reviews, only: [:show, :index] #appending reviews to memories so that we can show reviews on memory page
+    get 'search', on: :collection
   end
 
   resources :bookings, only: [:new, :create, :show] do #separate route for bookings
