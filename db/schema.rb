@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_063611) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "location"
-    t.boolean "status"
+    t.boolean "status", default: false, null: false
     t.date "start_date"
     t.date "end_date"
     t.integer "price"

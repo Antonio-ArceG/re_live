@@ -13,6 +13,7 @@ class MemoriesController < ApplicationController
 
   def show
     @memory = Memory.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

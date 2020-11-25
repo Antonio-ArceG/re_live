@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :memories, only: [:index, :show, :new, :create, :top] do #memories route
-    resources :bookings, only: [:new] #appending new action to memories
+    resources :bookings, only: [:create] #appending new action to memories
     resources :reviews, only: [:show, :index] #appending reviews to memories so that we can show reviews on memory page
     get 'search', on: :collection
   end
 
-  resources :bookings, only: [:new, :create, :show] do #separate route for bookings
+  resources :bookings, only: [:show] do #separate route for bookings
     resources :reviews, only: [:new, :create] #appending only the creation of review to bookings
   end
 

@@ -6,11 +6,14 @@
         <li>Price: $<%= @memory.price %></li>
         <li>Duration: <%= @memory.duration %></li>
         <li>Location: <%= @memory.location %></li>
-        <li>Created by:<%= @memory.creator.username %></li>
-        <li><img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user" /></li>
+        <li>Created by:<%= @memory.creator.username %>   <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar" /></li>
     </ul>
 
-    <%= link_to "Book now", "#", class: "btn btn-flat", new_memory_booking_path %>
     <%= link_to "back to memories", memories_path %>
     <%= link_to "back to home", root_path %>
 </div>
+
+<%= simple_form_for([@memory, @booking]) do |f| %>
+  <%= f.input :start_date, html5: true %>
+  <%= f.submit %>
+  <% end %>
