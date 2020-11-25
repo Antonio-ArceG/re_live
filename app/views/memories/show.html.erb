@@ -4,11 +4,13 @@
     <ul>
         <li>Description: <%= @memory.description %></li>
         <li>Price: $<%= @memory.price %></li>
-        <li>Duration: <%= @memory.duration %> minutes</li>
+        <li>Duration: <%= @memory.duration %></li>
         <li>Location: <%= @memory.location %></li>
         <li>Created by:<%= @memory.creator.username %></li>
+        <li><img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user" /></li>
     </ul>
 
+    <%= link_to "Book now", "#", class: "btn btn-flat", new_memory_booking_path %>
     <%= link_to "back to memories", memories_path %>
     <%= link_to "back to home", root_path %>
 </div>
