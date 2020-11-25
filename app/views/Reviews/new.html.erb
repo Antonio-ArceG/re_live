@@ -1,0 +1,12 @@
+<div class="container">
+<h1> Create a new Review for <%= @memory.name %> </h1>
+
+<%= simple_form_for([@booking, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+  <% end %>
+
+<%= link_to "Back to Memories", my_memories_path %>
+
+</div>
