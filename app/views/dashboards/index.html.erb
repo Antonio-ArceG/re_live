@@ -17,18 +17,18 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
-
       <% @my_bookings.each do |booking| %>
       <div class="card-trip">
           <div>
-            <p><%= booking.memory%></p>
+            <p><%= booking.memory.name%></p>
             <p><%= booking.price%></p>
             <p><%= booking.status%></p>
+            <p><%= booking.location%></p>
             <p><%= booking.start_date%></p>
             <p><%= booking.end_date%></p>
-            
           </div>
         </div>
       </div>
     <% end %>
+    
+    <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
