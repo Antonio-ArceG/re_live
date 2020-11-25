@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_063611) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "location"
-    t.boolean "status"
+    t.boolean "status", default: false, null: false
     t.date "start_date"
     t.date "end_date"
     t.integer "price"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_063611) do
     t.string "encrypted_password", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.integer "phone_number", null: false
+    t.integer "phone_number", default: 0, null: false
     t.string "address", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
