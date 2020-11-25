@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :memories, only: [:index, :show, :new, :create, :top] do #memories route
     resources :bookings, only: [:create] #appending new action to memories
     resources :reviews, only: [:show, :index] #appending reviews to memories so that we can show reviews on memory page
+    get 'search', on: :collection
   end
 
   resources :bookings, only: [:show] do #separate route for bookings
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
 
 
   get '/dashboard', to: "dashboards#index" #separate route for dashboard view
-
+  get '/my_memories' => "dashboards#my_memories", as: "my_memories"
 end
