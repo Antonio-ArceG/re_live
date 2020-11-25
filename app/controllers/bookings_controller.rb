@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     @booking.price = @memory.price
     @booking.memory = @memory
     if @booking.save
+      flash[:notice] = "Successfully booked #{@memory.name} at #{@booking.start_date.strftime("%A, %b %d")}"
       redirect_to memories_path
     else
       render "memories/show"
