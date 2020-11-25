@@ -15,7 +15,7 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     @memory.creator = current_user
     if @memory.save
-      redirect_to memories_path
+      redirect_to my_memories_path
     else
       render :new
     end

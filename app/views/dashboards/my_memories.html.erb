@@ -17,7 +17,7 @@
         </div>
       </div>
      
-      <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
+      
 
 <% @my_memories.each do |memory| %>
       <div class="card-trip">
@@ -32,5 +32,6 @@
         </div>
       </div>
     <% end %>
-
+    
     <%= link_to "Create a new memory",new_memory_path %>
+    <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>
