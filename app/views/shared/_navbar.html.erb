@@ -35,4 +35,11 @@
       <% end %>
     </ul>
   </div>
+
+  <div>
+    <form action="/memories/search" method="get">
+      <input type="text" name="memory" value="<%= params[:memory] %>" placeholder="Which memory are you searching for?">
+      <input type="submit">
+    </form>
+  </div>
 </div>

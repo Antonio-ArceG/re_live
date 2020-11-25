@@ -3,6 +3,14 @@ class MemoriesController < ApplicationController
     @memories = Memory.all
   end
 
+  def search
+    @memories = Memory.all
+    if params[:memory]
+      @memories = @memories.where("name ILIKE ? ", "%#{params[:memory]}%")
+    end
+    render 'index'
+  end
+
   def show
     @memory = Memory.find(params[:id])
   end
