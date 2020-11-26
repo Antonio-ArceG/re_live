@@ -2,6 +2,7 @@
     <h1> Memory: <%= @memory.name  %></h1>
 
     <ul>
+        <li><%= cl_image_tag @memory.photo.key, height: 300, width: 400, crop: :fill %></li>
         <li>Description: <%= @memory.description %></li>
         <li>Price: $<%= @memory.price %></li>
         <li>Duration: <%= @memory.duration %></li>
@@ -17,3 +18,5 @@
   <%= f.input :start_date, html5: true %>
   <%= f.submit %>
   <% end %>
+
+
