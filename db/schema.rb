@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_013757) do
+ActiveRecord::Schema.define(version: 2020_11_26_054522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_013757) do
     t.bigint "creator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo_url", default: "https://res.cloudinary.com/drdoomsday/image/upload/v1605833611/sample.jpg"
     t.index ["creator_id"], name: "index_memories_on_creator_id"
   end
 
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_013757) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo_url", default: "https://res.cloudinary.com/drdoomsday/image/upload/v1605833611/sample.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
