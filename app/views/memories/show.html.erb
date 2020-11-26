@@ -7,7 +7,7 @@
         <li>Price: $<%= @memory.price %></li>
         <li>Duration: <%= @memory.duration %></li>
         <li>Location: <%= @memory.location %></li>
-        <li>Created by:<%= @memory.creator.username %>   <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar" /></li>
+        <li>Created by:<%= @memory.creator.username %>   <%= cl_image_tag @memory.creator.photo.key, class: 'avatar' %></li>
     </ul>
 
     <%= link_to "back to memories", memories_path %>
