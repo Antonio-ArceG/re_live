@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_054522) do
     t.bigint "memory_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "booking_status", default: 0
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
     t.index ["memory_id"], name: "index_bookings_on_memory_id"
   end

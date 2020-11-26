@@ -10,9 +10,24 @@
         <li>Created by:<%= @memory.creator.username %>   <%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %></li>
     </ul>
 
+
+    <h2>Reviews</h2>
+    <% @memory.reviews.each do |review| %>
+        <div>
+            <p><%= review.booking.customer.username %></p>
+            <p><%= review.content %></p>
+            <p><%= review.rating %></p>
+            <p> <% if current_user == review.booking.customer %>
+                    <%= link_to "Destroy Review", review_path(review), method: "delete" %>
+            <% end %>
+            </p>
+        </div>
+    <% end %>
+
     <%= link_to "back to memories", memories_path %>
     <%= link_to "back to home", root_path %>
 </div>
+
 
 <%= simple_form_for([@memory, @booking]) do |f| %>
   <%= f.input :start_date, html5: true %>

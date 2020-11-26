@@ -6,14 +6,22 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
     @review.booking_id = @booking.id
     if @review.save
       redirect_to dashboard_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    # @user = Review.find(params[:id])
+    #if @user == current user,
+    @review.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private
