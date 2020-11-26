@@ -31,6 +31,7 @@
             </p>
             <p><%= booking.location%></p>
             <p><%= booking.start_date.strftime("%A, %b %d") %></p>
+            <%= link_to "Leave a Review", new_booking_review_path(booking), class: 'btn-gradient' %>
           </div>
         </div>
       </div>
