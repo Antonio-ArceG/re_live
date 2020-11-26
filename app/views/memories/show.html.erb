@@ -10,9 +10,20 @@
         <li>Created by:<%= @memory.creator.username %>   <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar" /></li>
     </ul>
 
+
+    <h2>Reviews</h2>
+    <% @memory.reviews.each do |review| %>
+        <div>
+            <p><%= review.booking.customer.username %></p>
+            <p><%= review.content %></p>
+            <p><%= review.rating %></p>
+        </div>
+    <% end %>
+
     <%= link_to "back to memories", memories_path %>
     <%= link_to "back to home", root_path %>
 </div>
+
 
 <%= simple_form_for([@memory, @booking]) do |f| %>
   <%= f.input :start_date, html5: true %>
