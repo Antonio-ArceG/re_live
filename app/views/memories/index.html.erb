@@ -3,7 +3,7 @@
   <div class="cards">
     <% @memories.each do |memory| %>
       <div class="card-trip">
-        <%= cl_image_tag memory.photo.key, class: 'card-trip-img' %>
+        <%= cl_image_tag memory.photo_url, class: 'card-trip-img' %>
         <div class="card-trip-infos">
           <div>
             <h2><%= link_to memory.name, memory_path(memory)%></h2>
@@ -11,7 +11,7 @@
           </div>
           <h2 class="card-trip-pricing">$<%= memory.price%></h2>
             <div class="card-trip-user avatar-bordered">
-                <%= cl_image_tag memory.creator.photo.key, class: 'avatar' %>
+                <%= cl_image_tag memory.creator.photo_url, class: 'avatar' %>
             </div>
         </div>
       </div>
