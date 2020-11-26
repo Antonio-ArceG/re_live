@@ -1,5 +1,7 @@
 <h1>Memories</h1>
 <div class="main-container">
+  <%= cl_image_tag("https://res.cloudinary.com/drdoomsday/image/upload/v1606284303/re:live/Screen_Shot_2020-11-25_at_4.44.07_pm_fessxo.png",
+      width: 400, height: 300, crop: :fill) %>
   <div class="cards">
     <% @memories.each do |memory| %>
       <div class="card-trip">
