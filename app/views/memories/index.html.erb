@@ -9,7 +9,7 @@
         <%= cl_image_tag memory.photo_url, class: 'card-trip-img' %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= link_to memory.name, memory_path(memory)%></h2>
+            <h2><%= link_to memory.name, memory_path(memory), class: 'card-link'%></h2>
             <p><%= memory.description%></p>
           </div>
           <h2 class="card-trip-pricing">$<%= memory.price%></h2>
