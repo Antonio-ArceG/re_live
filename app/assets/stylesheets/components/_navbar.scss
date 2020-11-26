@@ -1,6 +1,19 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: $gray;
+  /*background-color: $gray;*/
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: block;
+  margin: 0;
+  width: 100%;
+  min-width: 1024px;
+  height: 48px;
+  max-height: 44px;
+  background:$gray;
+  font-size: 17px;
+  position: sticky;  
 }
 
 .navbar-lewagon .navbar-collapse {
