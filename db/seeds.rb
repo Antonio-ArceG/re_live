@@ -1,6 +1,8 @@
+require 'open-uri'
+
 puts "seeding database, please wait..."
 
-user = User.create!(
+user_1 = User.create!(
   username: "JonnyD",
   email: "jonnydanger@relive.com",
   first_name: "Jonny",
@@ -10,8 +12,8 @@ user = User.create!(
   password: "password"
 )
 
-  Memory.create!(
-        creator: user,
+  memory_1 = Memory.create!(
+        creator: user_1,
         name: "Swimming with sharks",
         description: "Experience swimming with sharks in the pacific while strapped to a kilos of beef",
         price: Faker::Number.number(digits: 3),
@@ -20,8 +22,8 @@ user = User.create!(
         category: "Swimming"
   )
 
-  Memory.create!(
-        creator: user,
+  memory_2 = Memory.create!(
+        creator: user_1,
         name: "Swimming with angry jellyfish",
         description: "Experience swimming with angry box jellyfish in the pacific ocean with some crazy cool deepsea lights",
         price: Faker::Number.number(digits: 3),
@@ -30,7 +32,7 @@ user = User.create!(
         category: "Swimming"
   )
 
-user_1 = User.create!(
+user_2 = User.create!(
   username: "Shaquille.oatmeal",
   email: "shaquilleoatmeal@relive.com",
   first_name: "Shaquille",
@@ -40,8 +42,8 @@ user_1 = User.create!(
   password: "password"
 )
 
-  memory_1 = Memory.create!(
-        creator: user_1,
+  memory_3 = Memory.create!(
+        creator: user_2,
         name: "Winning the Tuna tossing championship",
         description: "If you ever wondered how much strength it takes to toss a living chunk of fish then this memory is for you",
         price: Faker::Number.number(digits: 3),
@@ -50,8 +52,8 @@ user_1 = User.create!(
         category: Faker::Team.sport
   )
 
-  Memory.create!(
-        creator: user_1,
+  memory_4 =Memory.create!(
+        creator: user_2,
         name: "Come 2nd place in the Unicycle Hockey world-championship of 2020",
         description: "Nothing is as bitter-sweet as coming second place to the team you started your uni-hockey career with",
         price: Faker::Number.number(digits: 3),
@@ -60,7 +62,7 @@ user_1 = User.create!(
         category: Faker::Team.sport
   )
 
-user = User.create!(
+user_3 = User.create!(
   username: "Sweet-Cocoa",
   email: "sweetcocoapuffs@relive.com",
   first_name: "Saphire",
@@ -70,8 +72,8 @@ user = User.create!(
   password: "password"
 )
 
-  Memory.create!(
-        creator: user,
+  memory_5 =Memory.create!(
+        creator: user_3,
         name: "Fire Fyre-Fest 2017",
         description: "BEST.FESTIVAL.EVER! experience everything exciting about waiting for Fyre-Festival right until it started",
         price: Faker::Number.number(digits: 3),
@@ -80,8 +82,8 @@ user = User.create!(
         category: "Party"
   )
 
-  Memory.create!(
-        creator: user,
+  memory_6 =Memory.create!(
+        creator: user_3,
         name: "Party with Berlusconi",
         description: "Boonga-Boonga-Party!!! No one parties as hard as corrupt politicians from the Mediterranean",
         price: Faker::Number.number(digits: 3),
@@ -90,8 +92,8 @@ user = User.create!(
         category: "Party"
   )
 
-  Memory.create!(
-        creator: user,
+  memory_7 =Memory.create!(
+        creator: user_3,
         name: "Lines on rails",
         description: "Get in line and dance the conga until you drop by the train station!",
         price: Faker::Number.number(digits: 3),
@@ -100,7 +102,7 @@ user = User.create!(
         category: "Party"
   )
 
-user_2 = User.create!(
+user_4 = User.create!(
   username: "SpaceCadet",
   email: "intergalacticcowboy@relive.com",
   first_name: "Neil",
@@ -110,8 +112,8 @@ user_2 = User.create!(
   password: "password"
 )
 
-  memory_2 = Memory.create!(
-        creator: user_2,
+  memory_8 = Memory.create!(
+        creator: user_4,
         name: "Apollo 13",
         description: "Experience the launch that changed the world from the eyes of an Astronaut that was too late to the launch",
         price: Faker::Number.number(digits: 3),
@@ -120,8 +122,8 @@ user_2 = User.create!(
         category: "Space"
   )
 
-  Memory.create!(
-        creator: user_2,
+  memory_9 = Memory.create!(
+        creator: user_4,
         name: "Space X",
         description: "What's the difference between commercial space-travel and governmental one? THE SNACKS!!",
         price: Faker::Number.number(digits: 3),
@@ -130,7 +132,7 @@ user_2 = User.create!(
         category: "Space"
   )
 
-user_3 = User.create!(
+user_5 = User.create!(
   username: "Fluorescent.Adolesent",
   email: "pubertysucks@relive.com",
   first_name: "Timmy",
@@ -140,8 +142,8 @@ user_3 = User.create!(
   password: "password"
 )
 
-  Memory.create!(
-        creator: user_3,
+  memory_10 = Memory.create!(
+        creator: user_5,
         name: "Acne at the disco!",
         description: "Why would this happen to you! Acne breakouts before your first high-school party with Jenny!?!? WHY YOU!!!",
         price: Faker::Number.number(digits: 3),
@@ -150,8 +152,8 @@ user_3 = User.create!(
         category: "Space"
   )
 
-  Memory.create!(
-        creator: user_3,
+  memory_11 = Memory.create!(
+        creator: user_5,
         name: "Humid dreams",
         description: "You were warned about this happening, but why would it happen at your best friends house in your first sleepover?!?",
         price: Faker::Number.number(digits: 3),
@@ -160,9 +162,8 @@ user_3 = User.create!(
         category: "Space"
   )
 
-
-  memory_3 = Memory.create!(
-        creator: user_3,
+  memory_12 = Memory.create!(
+        creator: user_5,
         name: "She's not my mum!",
         description: "Did you just call your teacher 'MUM'? Better start looking for a new school",
         price: Faker::Number.number(digits: 3),
@@ -211,40 +212,57 @@ end
   )
 end
 
+puts "Downloading images"
+
+file_1 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283977/re:live/vino-li-gGX1fJkmw3k-unsplash_lzrq4w.jpg')
+memory_1.photo.attach(io: file_1, filename: 'jellyfish.jpg', content_type: 'image/jpg')
+
+file_2 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283983/re:live/gerald-schombs-GBDkr3k96DE-unsplash_luepxf.jpg')
+memory_2.photo.attach(io: file_2, filename: 'shark.jpg', content_type: 'image/jpg')
+
+file_3 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/10760066-3x2-xlarge_plmuhp.jpg')
+memory_3.photo.attach(io: file_3, filename: 'tuna.jpg', content_type: 'image/jpg')
+
+file_4 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283973/re:live/uni_hoecky_eqqk4c.jpg')
+memory_4.photo.attach(io: file_4, filename: 'hockey.jpg', content_type: 'image/jpg')
+
+file_5 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283966/re:live/fyre_fest_bu33h0.jpg')
+memory_5.photo.attach(io: file_5, filename: 'fyre.jpg', content_type: 'image/jpg')
+
+file_6 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283971/re:live/berlusconi_n5utjb.jpg')
+memory_6.photo.attach(io: file_6, filename: 'bunga.jpg', content_type: 'image/jpg')
+
+file_7 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/conga_skate_jxemqh.jpg')
+memory_7.photo.attach(io: file_7, filename: 'lines.jpg', content_type: 'image/jpg')
+
+file_8 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283994/re:live/history-in-hd-0B4BECR9nGM-unsplash_edukaf.jpg')
+memory_8.photo.attach(io: file_8, filename: 'apollo.jpg', content_type: 'image/jpg')
+
+file_9 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283973/re:live/brian-mcgowan-I0fDR8xtApA-unsplash_tigux8.jpg')
+memory_9.photo.attach(io: file_9, filename: 'space.jpg', content_type: 'image/jpg')
+
+file_10 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283973/re:live/teenAcne-824648588-650x450-650x428_rfjv7o.jpg')
+memory_10.photo.attach(io: file_10, filename: 'acne.jpg', content_type: 'image/jpg')
+
+file_11 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283981/re:live/ricardo-aguilera-YVkcShzKAPk-unsplash_vodicm.jpg')
+memory_11.photo.attach(io: file_11, filename: 'dreams.jpg', content_type: 'image/jpg')
+
+file_12 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606283999/re:live/national-cancer-institute-N_aihp118p8-unsplash_fvmw6b.jpg')
+memory_12.photo.attach(io: file_12, filename: 'mum.jpg', content_type: 'image/jpg')
+
+file_13 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606284669/re:live/braxton-apana-Pn285aobxHg-unsplash_afppa5.jpg')
+user_1.photo.attach(io: file_13, filename: 'jonny.jpg', content_type: 'image/jpg')
+
+file_14 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606284664/re:live/LeavnHQd_400x400_s6u9sj.jpg')
+user_2.photo.attach(io: file_14, filename: 'shaquille.jpg', content_type: 'image/jpg')
+
+file_15 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606284679/re:live/mike-austin-oRVnmlBD4Vo-unsplash_uhl0iq.jpg')
+user_3.photo.attach(io: file_15, filename: 'cocoa.jpg', content_type: 'image/jpg')
+file_16 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606284678/re:live/levi-stute-mFF39sOZSgM-unsplash_vxe1k3.jpg')
+user_4.photo.attach(io: file_16, filename: 'cadet.jpg', content_type: 'image/jpg')
+
+file_17 = URI.open('https://res.cloudinary.com/drdoomsday/image/upload/v1606360431/re:live/download_1_wbyggw.jpg')
+user_5.photo.attach(io: file_17, filename: 'teenager.jpg', content_type: 'image/jpg')
+
+
 puts "Total Rekall!"
-
-# 5.times do
-#   user = User.create!(
-#     username: Faker::Games::SuperSmashBros.unique.fighter,
-#     email: Faker::Internet.unique.email,
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     phone_number: Faker::PhoneNumber.cell_phone,
-#     address: Faker::Address.street_address,
-#     password: "password"
-#   )
-
-#   5.times do
-#     memory = Memory.create!(
-#       creator: user,
-#       name: Faker::Games::Pokemon.unique.name,
-#       description: Faker::Quote.famous_last_words,
-#       price: Faker::Number.number(digits: 3),
-#       duration: "#{rand(2..10)} #{%w(hours days weeks).sample}",
-#       location: Faker::Nation.capital_city,
-#       category: Faker::Team.sport
-#     )
-#     start_date = Date.today + rand(-10..10)
-#     Booking.create!(
-#       location: memory.location,
-#       status: false,
-#       start_date: start_date,
-#       end_date: start_date + rand(0..5),
-#       price: memory.price,
-#       customer: User.all.sample,
-#       memory: memory,
-#     )
-#   end
-# end
-
-

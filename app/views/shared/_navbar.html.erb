@@ -1,8 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://puu.sh/GQGNW/06c5a09e63.png" %>
-    <% end %>
-
+    <%= cl_image_tag "https://res.cloudinary.com/drdoomsday/image/upload/v1606284303/re:live/Screen_Shot_2020-11-25_at_4.44.07_pm_fessxo.png" %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +20,7 @@
           <%= link_to "New Memory", new_memory_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://puu.sh/GQGOJ/c8628f0e93.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
