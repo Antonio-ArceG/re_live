@@ -1,13 +1,12 @@
 <div class="container">
-    <h1> Memory: <%= @memory.name  %></h1>
-
+    <li><%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %></li>
+    <h2 class="h2-global"><%= @memory.name%></h2>
+    <div><%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %> <%= link_to "#{@memory.creator.username}", my_memories_path, class:"card-link"%></div>
     <ul>
-        <li><%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %></li>
         <li>Description: <%= @memory.description %></li>
         <li>Price: $<%= @memory.price %></li>
         <li>Duration: <%= @memory.duration %></li>
         <li>Location: <%= @memory.location %></li>
-        <li>Created by:<%= @memory.creator.username %>   <%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %></li>
     </ul>
 
 
@@ -33,5 +32,4 @@
   <%= f.input :start_date, html5: true %>
   <%= f.submit %>
   <% end %>
-
 
