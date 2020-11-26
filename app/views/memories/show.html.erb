@@ -2,9 +2,10 @@
     <li><%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %></li>
     <h2 class="h2-global"><%= @memory.name%></h2>
     <div><%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %> <%= link_to "#{@memory.creator.username}", my_memories_path, class:"card-link"%></div>
+    
     <ul>
         <li>Description: <%= @memory.description %></li>
-        <li>Price: $<%= @memory.price %></li>
+        <li></li>
         <li>Duration: <%= @memory.duration %></li>
         <li>Location: <%= @memory.location %></li>
     </ul>
@@ -23,13 +24,17 @@
         </div>
     <% end %>
 
-    <%= link_to "back to memories", memories_path %>
-    <%= link_to "back to home", root_path %>
 </div>
-
-
-<%= simple_form_for([@memory, @booking]) do |f| %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.submit %>
-  <% end %>
-
+<div class="container booking-form">
+  <h5>$<%= @memory.price %>/hour</h5>
+  <%= simple_form_for([@memory, @booking]) do |f| %>
+    <%= f.input :start_date, html5: true, input_html: { class: 'searchTerm' }%>
+    <%= f.button :submit, "Confirm Booking", class: "btn-green" %>
+    <% end %>
+</div>
+<div class="container">
+ <div class="spacing">
+    <%= link_to "Back to All Memories", memories_path, class: 'btn-pink' %>
+    <%= link_to "Next memory", memory_path, class: 'btn-green'%>
+ </div>
+</div>
