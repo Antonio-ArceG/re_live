@@ -3,17 +3,18 @@
   <% @bookings.each do |booking| %>
     <li>User: <%= booking.customer.username %></li>
     <li>Booking Status: 
-      <% if booking.status %>
-          Approved
-        <% else %> 
-          Awaiting Approval
-      <% end %>    
+      <%= booking.booking_status.humanize %>  
     </li>
     <li>Start Date: <%= booking.start_date.strftime("%A, %b %d") %></li>
-    <% unless booking.status %>
+
+    <% if booking.booking_status == "awaiting_confirmation" %>
       <%= simple_form_for(booking) do |f| %>
-        <%= f.hidden_field :status, value: 1 %>
+        <%= f.hidden_field :booking_status, value: "confirmed" %>
         <%= f.button :submit, 'Approve Booking', class: 'btn btn-gradient' %>
+      <% end %>
+      <%= simple_form_for(booking) do |f| %>
+        <%= f.hidden_field :booking_status, value: "declined" %>
+        <%= f.button :submit, 'Decline Booking', class: 'btn btn-gradient' %>        
       <% end %>
     <% end %>
   <% end %>

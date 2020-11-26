@@ -22,13 +22,7 @@
           <div>
             <p><%= booking.memory.name%></p>
             <p><%= "$#{booking.price}"%></p>
-            <p>      
-              <% if booking.status %>
-                Approved
-              <% else %> 
-                Awaiting Approval
-              <% end %>   
-            </p>
+            <p><%= booking.booking_status.humanize %></p>
             <p><%= booking.location%></p>
             <p><%= booking.start_date.strftime("%A, %b %d") %></p>
             <%= link_to "Leave a Review", new_booking_review_path(booking), class: 'btn-gradient' %>
