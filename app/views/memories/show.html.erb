@@ -1,5 +1,6 @@
 <div class="container">
-    <li><%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %></li>
+    <%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %>
+    <hr class="solid">
     <h2 class="h2-global"><%= @memory.name%></h2>
     <div><%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %> <%= link_to "#{@memory.creator.username}", my_memories_path, class:"card-link"%></div>
     
