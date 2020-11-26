@@ -1,22 +1,22 @@
 .search {
     width: 100%;
     position: relative;
-    display: flex;
   }
   
   .searchTerm {
     width: 100%;
-    border: 3px solid #00B4CC;
+    border: 3px solid $gray;
     border-right: none;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px 0 0 5px;
+    padding: 25px;
+    height: 30px;
+    border-radius: 10px;
     outline: none;
-    color: #9DBFAF;
+    color: white;
+    background: $gray;
   }
   
   .searchTerm:focus{
-    color: #f038ff;
+    color: $neon-pink;
   }
   
   .searchButton {
@@ -35,7 +35,8 @@
   .wrap{
     width: 50%;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
   }
