@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     # @user = Review.find(params[:id])
     #if @user == current user,
     @review.destroy
-    redirect_to my_reviews_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
