@@ -27,6 +27,8 @@
             <h2><%= link_to memory.name, memory_path(memory)%></h2>
             <p><%= memory.description%></p>
           </div>
+          <%= link_to "View all bookings", memory_bookings_path(memory), class:"btn-gradient" %>
+          
           <h2 class="card-trip-pricing">$<%= memory.price%></h2>
           <img src="https://puu.sh/GQHkA/223cb682d1.png" class="card-trip-user avatar-bordered" />
         </div>

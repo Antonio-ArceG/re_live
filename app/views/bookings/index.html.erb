@@ -1,0 +1,28 @@
+<div class="container">
+<h1><%= @memory.name %></h1>
+  <% @bookings.each do |booking| %>
+    <li>User: <%= booking.customer.username %></li>
+    <li>Booking Status: 
+      <% if booking.status %>
+          Approved
+        <% else %> 
+          Awaiting Approval
+      <% end %>    
+    </li>
+    <li>Start Date: <%= booking.start_date.strftime("%A, %b %d") %></li>
+    <% unless booking.status %>
+      <%= simple_form_for(booking) do |f| %>
+        <%= f.hidden_field :status, value: 1 %>
+        <%= f.button :submit, 'Approve Booking', class: 'btn btn-gradient' %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= link_to "back to memories", memories_path %>
+  <%= link_to "back to home", root_path %>
+</div>
+
+
+
+
+
