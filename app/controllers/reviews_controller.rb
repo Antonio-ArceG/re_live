@@ -16,13 +16,13 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @review = Review.find(params[:id])
-  #   @user = Review.find(params[:id])
-  #   #if @user == current user,
-  #   @review.destroy
-  #   redirect_to cocktails_path
-  # end
+  def destroy
+    @review = Review.find(params[:id])
+    # @user = Review.find(params[:id])
+    #if @user == current user,
+    @review.destroy
+    redirect_to my_reviews_path
+  end
 
   private
 

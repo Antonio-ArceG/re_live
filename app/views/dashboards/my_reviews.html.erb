@@ -24,6 +24,7 @@
             <h2><%= review.booking.memory.name %></h2>
             <p><%= review.content %></p>
             <p><%= review.rating %></p>
+            <%= link_to "Destroy Review", review_path(review), method: "delete" %>
           </div>
         </div>
       </div>
