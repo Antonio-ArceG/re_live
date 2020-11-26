@@ -12,8 +12,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create] #appending only the creation of review to bookings
   end
 
+  resources :reviews, only: [:destroy]
+
 
   get '/dashboard', to: "dashboards#index" #separate route for dashboard view
   get '/my_memories' => "dashboards#my_memories", as: "my_memories"
+  get '/my_reviews' => "dashboards#my_reviews", as: "my_reviews"
 end
 
