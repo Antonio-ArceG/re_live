@@ -21,13 +21,17 @@
       <div class="card-trip">
           <div>
             <p><%= booking.memory.name%></p>
-            <p><%= booking.price%></p>
-            <p><%= booking.status%></p>
+            <p><%= "$#{booking.price}"%></p>
+            <p>      
+              <% if booking.status %>
+                Approved
+              <% else %> 
+                Awaiting Approval
+              <% end %>   
+            </p>
             <p><%= booking.location%></p>
-            <p><%= booking.start_date%></p>
-
+            <p><%= booking.start_date.strftime("%A, %b %d") %></p>
             <%= link_to "Leave a Review", new_booking_review_path(booking), class: 'btn-gradient' %>
-
           </div>
         </div>
       </div>
