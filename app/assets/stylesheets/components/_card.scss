@@ -17,6 +17,10 @@
   object-fit: cover;
 }
 
+.card-trip h2 {
+ color: $neon-green;
+}
+
 .card-trip > img {
   height: 200px;
   width: 100%;
