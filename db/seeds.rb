@@ -137,16 +137,6 @@ user_2 = User.create!(
     photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/10760066-3x2-xlarge_plmuhp.jpg'
   )
 
-  memory_4 =Memory.create!(
-    creator: user_2,
-    name: "Come 2nd place in the Unicycle Hockey world-championship of 2020",
-    description: "Nothing is as bitter-sweet as coming second place to the team you started your uni-hockey career with",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: Faker::Nation.capital_city,
-    category: Faker::Team.sport,
-    photo_url: "https://res.cloudinary.com/drdoomsday/image/upload/v1606357810/va7akdaxcjg4ix6se1c8i2ru0kks.jpg"
-  )
 
 user_5 = User.create!(
   username: "Fluorescent.Adolesent",
