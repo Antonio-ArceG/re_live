@@ -1,0 +1,19 @@
+
+.container h5 {
+    font-size: bold;
+    font-weight: 600;
+    margin-top: auto;
+    color: rgb(201, 196, 196);
+}
+
+.booking-form {
+    width: 50%;
+    margin: 10% 10%;
+    padding: 10px;
+    display: grid;
+    overflow: hidden;
+    background: $gray;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+}
