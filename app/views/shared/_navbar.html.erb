@@ -34,5 +34,9 @@
     </ul>
   </div>
 </div>
-<%= render 'shared/searchbarform' %>
+<% unless controller_name === "pages" %>
+
+
+  <%= render 'shared/searchbarform' %>
+<% end %>
 </div>
