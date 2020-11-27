@@ -2,6 +2,17 @@ require 'open-uri'
 
 puts "seeding database, please wait..."
 
+user = User.create!(
+  username: "not_a_robot",
+  email: "example@relive.com",
+  first_name: "Rick",
+  last_name: "Deckard",
+  phone_number: Faker::PhoneNumber.cell_phone,
+  address: Faker::Address.street_address,
+  password: "password",
+  photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/c_fill,h_400,w_400/v1606419898/re:live/maximalfocus-naSAHDWRNbQ-unsplash_rpi26z.jpg'
+  )
+
 user_1 = User.create!(
   username: "JonnyD",
   email: "jonnydanger@relive.com",
@@ -16,7 +27,7 @@ user_1 = User.create!(
   memory_1 = Memory.create!(
     creator: user_1,
     name: "Swimming with sharks",
-    description: "Experience swimming with sharks in the pacific while strapped to a kilos of beef",
+    description: "Experience swimming with sharks in the pacific",
     price: Faker::Number.number(digits: 3),
     duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
     location: Faker::Nation.capital_city,
@@ -36,84 +47,7 @@ user_1 = User.create!(
     photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283977/re:live/vino-li-gGX1fJkmw3k-unsplash_lzrq4w.jpg'
   )
 
-user_2 = User.create!(
-  username: "Shaquille.oatmeal",
-  email: "shaquilleoatmeal@relive.com",
-  first_name: "Shaquille",
-  last_name: "Oatmeal",
-  phone_number: Faker::PhoneNumber.cell_phone,
-  address: Faker::Address.street_address,
-  password: "password",
-  photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606284664/re:live/LeavnHQd_400x400_s6u9sj.jpg'
-)
-
-  memory_3 = Memory.create!(
-    creator: user_2,
-    name: "Winning the Tuna tossing championship",
-    description: "If you ever wondered how much strength it takes to toss a living chunk of fish then this memory is for you",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: Faker::Nation.capital_city,
-    category: Faker::Team.sport,
-    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/10760066-3x2-xlarge_plmuhp.jpg'
-  )
-
-  memory_4 =Memory.create!(
-    creator: user_2,
-    name: "Come 2nd place in the Unicycle Hockey world-championship of 2020",
-    description: "Nothing is as bitter-sweet as coming second place to the team you started your uni-hockey career with",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: Faker::Nation.capital_city,
-    category: Faker::Team.sport,
-    photo_url: "https://res.cloudinary.com/drdoomsday/image/upload/v1606357810/va7akdaxcjg4ix6se1c8i2ru0kks.jpg"
-  )
-
-user_3 = User.create!(
-  username: "Sweet-Cocoa",
-  email: "sweetcocoapuffs@relive.com",
-  first_name: "Saphire",
-  last_name: "Smith",
-  phone_number: Faker::PhoneNumber.cell_phone,
-  address: Faker::Address.street_address,
-  password: "password",
-  photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606284679/re:live/mike-austin-oRVnmlBD4Vo-unsplash_uhl0iq.jpg'
-)
-
-  memory_5 =Memory.create!(
-    creator: user_3,
-    name: "Fire Fyre-Fest 2017",
-    description: "BEST.FESTIVAL.EVER! experience everything exciting about waiting for Fyre-Festival right until it started",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: "Exuma, The Bahamas",
-    category: "Party",
-    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283966/re:live/fyre_fest_bu33h0.jpg'
-  )
-
-  memory_6 =Memory.create!(
-    creator: user_3,
-    name: "Party with Berlusconi",
-    description: "Boonga-Boonga-Party!!! No one parties as hard as corrupt politicians from the Mediterranean",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: "Italy",
-    category: "Party",
-    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283971/re:live/berlusconi_n5utjb.jpg'
-  )
-
-  memory_7 =Memory.create!(
-    creator: user_3,
-    name: "Lines on rails",
-    description: "Get in line and dance the conga until you drop by the train station!",
-    price: Faker::Number.number(digits: 3),
-    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
-    location: "Melbourne",
-    category: "Party",
-    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/conga_skate_jxemqh.jpg'
-  )
-
-user_4 = User.create!(
+  user_4 = User.create!(
   username: "SpaceCadet",
   email: "intergalacticcowboy@relive.com",
   first_name: "Neil",
@@ -145,6 +79,64 @@ user_4 = User.create!(
     category: "Space",
     photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283973/re:live/brian-mcgowan-I0fDR8xtApA-unsplash_tigux8.jpg'
   )
+
+
+
+user_3 = User.create!(
+  username: "Sweet-Cocoa",
+  email: "sweetcocoapuffs@relive.com",
+  first_name: "Saphire",
+  last_name: "Smith",
+  phone_number: Faker::PhoneNumber.cell_phone,
+  address: Faker::Address.street_address,
+  password: "password",
+  photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606284679/re:live/mike-austin-oRVnmlBD4Vo-unsplash_uhl0iq.jpg'
+)
+
+  memory_5 =Memory.create!(
+    creator: user_3,
+    name: "Fire Fyre-Fest 2017",
+    description: "BEST.FESTIVAL.EVER! experience everything exciting about waiting for Fyre-Festival right until it started",
+    price: Faker::Number.number(digits: 3),
+    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
+    location: "Exuma, The Bahamas",
+    category: "Party",
+    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283966/re:live/fyre_fest_bu33h0.jpg'
+  )
+
+  memory_6 =Memory.create!(
+    creator: user_3,
+    name: "Party with Berlusconi",
+    description: "Boonga-Boonga-Party!!! No one parties as hard as corrupt politicians from the Mediterranean",
+    price: Faker::Number.number(digits: 3),
+    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
+    location: "Italy",
+    category: "Party",
+    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606419887/re:live/tony-reid-PGdMhonLLZk-unsplash_wus9lj.jpg'
+  )
+
+user_2 = User.create!(
+  username: "Shaquille.oatmeal",
+  email: "shaquilleoatmeal@relive.com",
+  first_name: "Shaquille",
+  last_name: "Oatmeal",
+  phone_number: Faker::PhoneNumber.cell_phone,
+  address: Faker::Address.street_address,
+  password: "password",
+  photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606284664/re:live/LeavnHQd_400x400_s6u9sj.jpg'
+)
+
+  memory_3 = Memory.create!(
+    creator: user_2,
+    name: "Winning the Tuna tossing championship",
+    description: "If you ever wondered how much strength it takes to toss a living chunk of fish then this memory is for you",
+    price: Faker::Number.number(digits: 3),
+    duration: "#{rand(2..10)} #{%w(minutes hours days weeks).sample}",
+    location: Faker::Nation.capital_city,
+    category: Faker::Team.sport,
+    photo_url: 'https://res.cloudinary.com/drdoomsday/image/upload/v1606283965/re:live/10760066-3x2-xlarge_plmuhp.jpg'
+  )
+
 
 user_5 = User.create!(
   username: "Fluorescent.Adolesent",
