@@ -1,16 +1,17 @@
 <div class="container">
-<h1> Create a new memory </h1>
+  <h1> Share your memories with </h1>
 
-<%= simple_form_for([@user, @memory]) do |f| %>
+  <%= simple_form_for([@user, @memory]) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :duration %>
   <%= f.input :location %>
   <%= f.input :category %>
-  <%= f.submit %>
+  <%= f.button :submit, 'Leave a Review', id:'btn-green', class:"btn-green" %>
   <% end %>
+</div>
 
-<%= link_to "Back to Memories", my_memories_path %>
-
+<div class="container">
+  <%= link_to "Back to Memories", my_memories_path, class: 'btn-pink' %>
 </div>

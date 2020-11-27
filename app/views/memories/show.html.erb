@@ -27,15 +27,14 @@
 
 </div>
 <div class="container booking-form">
-  <h5>$<%= @memory.price %>/hour</h5>
+  <h5>$<%= @memory.price %></h5>
   <%= simple_form_for([@memory, @booking]) do |f| %>
     <%= f.input :start_date, html5: true, input_html: { class: 'searchTerm' }%>
-    <%= f.button :submit, "Confirm Booking", class: "btn-green" %>
+    <%= f.button :submit, 'Confirm Booking', id:'btn-green', class:"btn-green" %>
     <% end %>
 </div>
 <div class="container">
  <div class="spacing">
-    <%= link_to "Back to All Memories", memories_path, class: 'btn-pink' %>
-    <%= link_to "Next memory", memory_path, class: 'btn-green'%>
+    <%= link_to "Back to Memories", memories_path, class: 'btn-pink' %>
  </div>
 </div>
