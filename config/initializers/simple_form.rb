@@ -162,7 +162,6 @@ SimpleForm.setup do |config|
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = 'checkbox'
-
   # Defines if the default input wrapper class should be included in radio
   # collection wrappers.
   # config.include_default_input_wrapper_class = true
@@ -173,4 +172,5 @@ SimpleForm.setup do |config|
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
+  
 end
