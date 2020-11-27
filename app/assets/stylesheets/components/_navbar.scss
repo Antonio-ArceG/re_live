@@ -9,19 +9,26 @@
   margin: 0;
   width: 100%;
   min-width: 1024px;
-  height: 48px;
-  max-height: 44px;
   background:$gray;
   font-size: 17px;
-  position: sticky;  
+  position: sticky;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.navbar-nav {
+  align-items: center;
+}
+
+#navbar {
+  padding: 0;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-left: 25px;
 }
 .collapse {
   justify-content: right;

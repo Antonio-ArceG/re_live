@@ -1,12 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div id="navbar" class="justify-content-between navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="d-flex align-items-center">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= cl_image_tag "https://res.cloudinary.com/drdoomsday/image/upload/v1606441311/re:live/relive_logo_NOBLACK_tft46p.png" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -34,8 +33,6 @@
       <% end %>
     </ul>
   </div>
-
-  <div>
-
-  </div>
+</div>
+<%= render 'shared/searchbarform' %>
 </div>
