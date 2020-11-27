@@ -1,4 +1,12 @@
 
+p  {
+    color: white;
+}
+
+li {
+    color: white
+}
+
 .container h5 {
     font-size: bold;
     font-weight: 600;
@@ -7,13 +15,74 @@
 }
 
 .booking-form {
-    width: 50%;
-    margin: 10% 10%;
     padding: 10px;
+    width: 100%;
     display: grid;
-    overflow: hidden;
     background: $gray;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     grid-template-columns: 1fr;
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+ 
+#memory-show-top {
+    display: flex;
+    // flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#memory-show-image {
+    display: contents;
+    width: 30%;
+}
+
+#memory-detail-container {
+    // text=align: justify;
+    text-align: left;
+}
+
+
+#memory-show-details {
+    width: 70%;
+    padding-left: 20px;
+    // align-items: left;
+}
+
+#show-booking-and-review {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+#bottom-navigation {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#make-a-booking {
+    max-width: 300px;
+}
+
+#leave-a-review {
+    max-width: 500px;
+}
+
+#btn-green-override {
+    background-color: #b9e769;
+}
+
+#review-box {
+    border-bottom: 1px dotted #4cc9f0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#review-name {
+    font-weight: bold;
+}
+
+#reviews-show {
+    display: flex;
+    justify-content: space-around;
 }

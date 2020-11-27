@@ -20,11 +20,11 @@
       <% @my_bookings.each do |booking| %>
       <div class="card-trip">
           <div class = "disp-card">
-            <p><%= booking.memory.name%></p>
-            <p><%= "$#{booking.price}/hour"%></p>
-            <p><%= booking.booking_status.humanize %></p>
-            <p><%= booking.location%></p>
-            <p><%= booking.start_date.strftime("%A, %b %d") %></p>
+            <p><%= "Memory: #{booking.memory.name}"%></p>
+            <p><%= "Price: $#{booking.price}"%></p>
+            <p><%= "Booking Status: #{booking.booking_status.humanize}" %></p>
+            <p><%= "Location: #{booking.location}"%></p>
+            <p><%= "Date: #{booking.start_date.strftime("%A, %b %d")}" %></p>
            <div class="container"> <%= link_to "Leave a Review", new_booking_review_path(booking), class: 'btn-green' %></div>
           </div>
         </div>

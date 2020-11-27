@@ -1,12 +1,13 @@
 <div class="container">
-<h1> Write a new Review </h1>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1 class="h2-global"> Rate your experience! </h1>
 
-<%= simple_form_for([@booking, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.submit %>
-  <% end %>
-
-<%= link_to "Back to Memories", my_memories_path %>
-
+      <%= simple_form_for([@booking, @review]) do |f| %>
+      <%= f.input :content, label_html:{class:"form-label"} %>
+      <%= f.input :rating, label_html:{class:"form-label"} %>
+      <%= f.button :submit, 'Leave a Review', id:'btn-green', class:"btn-green" %>
+      <% end %>
+    </div>
+  </div>
 </div>
