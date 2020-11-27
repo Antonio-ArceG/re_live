@@ -27,7 +27,7 @@
             <h2><%= link_to memory.name, memory_path(memory)%></h2>
             <p><%= memory.description%></p>
           </div>
-          <%= link_to "View all bookings", memory_bookings_path(memory), class:"btn-gradient" %>
+          <%= link_to "View all bookings", memory_bookings_path(memory), class:"btn-green" %>
 
           <h2 class="card-trip-pricing">$<%= memory.price%></h2>
           <%= cl_image_tag memory.creator.photo_url, class: 'avatar' %>
@@ -35,5 +35,5 @@
       </div>
     <% end %>
 
-    <%= link_to "Create a new memory",new_memory_path %>
+    <%= link_to "Create a New Memory",new_memory_path, class: 'btn-green' %>
     <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="549" height="231" style="display: block; width: 549px; height: 231px;"></canvas>

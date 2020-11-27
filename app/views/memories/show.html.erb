@@ -1,41 +1,62 @@
 <div class="container">
-    <%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %>
-    <hr class="solid">
-    <h2 class="h2-global"><%= @memory.name%></h2>
-    <div><%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %> <%= link_to "#{@memory.creator.username}", my_memories_path, class:"card-link"%></div>
     
-    <ul>
-        <li>Description: <%= @memory.description %></li>
-        <li></li>
-        <li>Duration: <%= @memory.duration %></li>
-        <li>Location: <%= @memory.location %></li>
-    </ul>
+    <div id="memory-show-top">
+        // Image Section //
+        <div id="memory-show-image">
+            <%= cl_image_tag @memory.photo_url, height: 300, width: 400, crop: :fill %>
+            <hr class="solid">
+        </div>
+
+      
+        <div id="memory-show-details">
+            <div id="memory-detail-container">
+                <h2 class="h2-global"><%= @memory.name%></h2>
+                <div><%= cl_image_tag @memory.creator.photo_url, class: 'avatar' %> <%= link_to "#{@memory.creator.username}", my_memories_path, class:"card-link"%></div>
+                <div>
+                    <p style="font-weight: bold">Description:</h3>
+                    <p> <%= @memory.description %> </p>
+                    <p style="font-weight: bold">Duration:</h3>
+                    <p> <%= @memory.duration %> </p>     
+                    <p style="font-weight: bold">Location:</h3>
+                    <p> <%= @memory.location %> </p>                                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <hr class="solid">
 
-    <h2>Reviews</h2>
-    <% @memory.reviews.each do |review| %>
-        <div>
-            <p><%= review.booking.customer.username %></p>
-            <p><%= review.content %></p>
-            <p><%= review.rating %></p>
-            <p> <% if current_user == review.booking.customer %>
-                    <%= link_to "Destroy Review", review_path(review), method: "delete" %>
-            <% end %>
-            </p>
-        </div>
-    <% end %>
+    <div id="show-booking-and-review">
 
-</div>
-<div class="container booking-form">
-  <h5>$<%= @memory.price %>/hour</h5>
-  <%= simple_form_for([@memory, @booking]) do |f| %>
-    <%= f.input :start_date, html5: true, input_html: { class: 'searchTerm' }%>
-    <%= f.button :submit, "Confirm Booking", class: "btn-green" %>
-    <% end %>
-</div>
-<div class="container">
- <div class="spacing">
-    <%= link_to "Back to All Memories", memories_path, class: 'btn-pink' %>
-    <%= link_to "Next memory", memory_path, class: 'btn-green'%>
- </div>
+        <div id="make-a-booking">
+            <h2>Request a Booking!</h2>
+            <div class="booking-form">
+                <h5>$<%= @memory.price %>/hour</h5>
+                <%= simple_form_for([@memory, @booking]) do |f| %>
+                    <%= f.input :start_date, html5: true, input_html: { class: 'searchTerm' }%>
+                    <%= f.button :submit, "Request Booking", class: "btn-green", id: "btn-green-override" %>
+                    <% end %>
+            </div>
+            <div id="bottom-navigation">
+                <%= link_to "Back to All Memories", memories_path, class: 'btn-pink' %>
+            </div>
+        </div>
+
+        <div id="leave-a-review">
+            <h2>Reviews</h2>
+            <% @memory.reviews.each do |review| %>
+                <div id=review-box>
+                    <p id="review-name"><%= review.booking.customer.username %></p>
+                    <p id="review-content">"<%= review.content %>"</p>
+                    <p id="review-rating"><%= review.rating %> Star / 5</p>
+                    <p> <% if current_user == review.booking.customer %>
+                            <%= link_to "Destroy Review", review_path(review), method: "delete" %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+
+    
+
 </div>
