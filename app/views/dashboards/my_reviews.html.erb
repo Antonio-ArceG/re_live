@@ -23,8 +23,8 @@
           <div>
             <h2><%= review.booking.memory.name %></h2>
             <p><%= review.content %></p>
-            <p><%= review.rating %></p>
-            <%= link_to "Destroy Review", review_path(review), method: "delete" %>
+            <p><%= "Rating: #{review.rating}/5" %></p>
+            <%= link_to "Delete Review", review_path(review), method: "delete", class: 'btn-pink' %>
           </div>
         </div>
       </div>
