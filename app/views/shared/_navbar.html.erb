@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= cl_image_tag "https://res.cloudinary.com/drdoomsday/image/upload/v1606284303/re:live/Screen_Shot_2020-11-25_at_4.44.07_pm_fessxo.png" %>
+    <%= cl_image_tag "https://res.cloudinary.com/drdoomsday/image/upload/v1606441311/re:live/relive_logo_NOBLACK_tft46p.png" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "btn-blue-no-border" %>
+          <%= link_to "Browse", memories_path, class: "btn-blue-no-border" %>
         </li>
         <li class="nav-item">
           <%= link_to "Dashboard", dashboard_path, class: "btn-blue-no-border" %>
@@ -36,6 +36,6 @@
   </div>
 
   <div>
-    
+
   </div>
 </div>
