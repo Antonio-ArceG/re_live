@@ -1,12 +1,12 @@
 <div class="container">
-<h1> Write a new Review </h1>
+<h1> Rate your experience! </h1>
 
 <%= simple_form_for([@booking, @review]) do |f| %>
   <%= f.input :content %>
   <%= f.input :rating %>
-  <%= f.submit %>
+  <%= f.button :submit, 'Leave a Review', id:'btn-green', class:"btn-green" %>
   <% end %>
 
-<%= link_to "Back to Memories", my_memories_path %>
+<%= link_to "Back to Memories", my_memories_path, class:"btn-pink" %>
 
 </div>

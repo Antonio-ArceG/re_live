@@ -10,17 +10,16 @@
     <% if booking.booking_status == "awaiting_confirmation" %>
       <%= simple_form_for(booking) do |f| %>
         <%= f.hidden_field :booking_status, value: "confirmed" %>
-        <%= f.button :submit, 'Approve Booking', class: 'btn btn-gradient' %>
+        <%= f.button :submit, 'Approve Booking', id:'btn-green', class:"btn-green" %>
       <% end %>
       <%= simple_form_for(booking) do |f| %>
         <%= f.hidden_field :booking_status, value: "declined" %>
-        <%= f.button :submit, 'Decline Booking', class: 'btn btn-gradient' %>        
+        <%= f.button :submit, 'Decline Booking', id:'btn-pink', class:'btn-pink' %>        
       <% end %>
     <% end %>
   <% end %>
 
-  <%= link_to "back to memories", memories_path %>
-  <%= link_to "back to home", root_path %>
+  <%= link_to "Back to My Memories", my_memories_path, class:"btn-pink"%>
 </div>
 
 
